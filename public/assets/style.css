@@ -7,6 +7,14 @@ body {
 	color: #0c0c0c;
 }
 
+textarea {
+	resize: none;
+}
+
+#matrix{
+	resize: vertical;
+}
+
 .mx{
 	padding: 0;
 	margin-bottom: -10px;
@@ -60,4 +68,9 @@ table {
 
 form {
 	margin-top: 10px;
+}
+
+footer {
+	position: relative;
+	bottom: -20px;
 }

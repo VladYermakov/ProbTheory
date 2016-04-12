@@ -129,7 +129,7 @@ def process(distribution, xi, q)
 		end
 		s += ", при "
 		if i == 0
-			s += "%s <= %.4f" % [q, xi[i + 1]]
+			s += "%s &le; %.4f" % [q, xi[i + 1]]
 			while s[-1] == "0"
 				s = s[0..-2]
 			end
@@ -152,7 +152,7 @@ def process(distribution, xi, q)
 			if s[-1] == "."
 				s = s[0..-2]
 			end
-			s += " < %s <= %.4f" % [q, xi[i + 1]]
+			s += " < %s &le; %.4f" % [q, xi[i + 1]]
 			while s[-1] == "0"
 				s = s[0..-2]
 			end
