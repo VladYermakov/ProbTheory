@@ -129,7 +129,7 @@ def process(distribution, xi, q)
 		end
 		s += ", при "
 		if i == 0
-			s += "%s &le; %.4f" % [q, xi[i + 1]]
+			s += "%s &le; %.4f" % [q, xi[i + 1].round(7)]
 			while s[-1] == "0"
 				s = s[0..-2]
 			end
@@ -137,7 +137,7 @@ def process(distribution, xi, q)
 			s = s[0..-2]
 		end
 		elsif i == n
-			s += "%s > %.4f" % [q, xi[i]]
+			s += "%s > %.4f" % [q, xi[i].round(7)]
 			while s[-1] == "0"
 				s = s[0..-2]
 			end
@@ -145,14 +145,14 @@ def process(distribution, xi, q)
 			    s = s[0..-2]
 			end
 		else
-			s += "%.4f" % xi[i]
+			s += "%.4f" % xi[i].round(7)
 			while s[-1] == "0"
 				s = s[0..-2]
 			end
 			if s[-1] == "."
 				s = s[0..-2]
 			end
-			s += " < %s &le; %.4f" % [q, xi[i + 1]]
+			s += " < %s &le; %.4f" % [q, xi[i + 1].round(7)]
 			while s[-1] == "0"
 				s = s[0..-2]
 			end
