@@ -34,9 +34,9 @@ __END__
 	</head>
 	<body>
 		<%= yield %>
-		<audio controls="controls" autoplay loop>
+		<!--audio controls="controls" autoplay loop>
 			<source src="/music/testsong.mp3">
-		</audio>
+		</audio-->
 	</body>
 </html>
 
