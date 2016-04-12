@@ -1,2 +1,2 @@
 require './prod'
-run Prod.new
+run Sinatra::Application
