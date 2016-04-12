@@ -29,8 +29,6 @@ p {
 	font-size: 20px;
 	padding: 0px;
 	margin: 0px;
-	position: relative;
-	left: 708px;
 }
 
 .matrix tr {
@@ -39,7 +37,7 @@ p {
 }
 
 .matrix td {
-	/*border: 3px solid white;*/
+	border: 1px solid white;
 	padding: 0px;
 	margin: 0px;
 	height: 40px;
