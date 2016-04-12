@@ -1,57 +1,32 @@
 body {
-	/*background: url('background.jpg');*/
 	background: #fcfcfc;
-	min-height: 600px;
+	font-size: 20px;
 	padding: 0;
+	margin: 0;
+	margin-left: 10px;
+	color: #0c0c0c;
 	/*text-align: center;*/
 }
 
-input {
-	margin: 10px;
-	font-size: 20px;
-}
-
-.mx {
-	/*border: 1px solid black;*/
-	display: inline-block;
-	vertical-align: middle;
-	margin: 0;
+.mx{
 	padding: 0;
+	margin-bottom: -10px;
+	
 }
 
-.mx p {
-	font-size: 20px;
-	color: #0c0c0c;
-	display: inline-block;
-	/*border: 1px solid black;*/
-	width: 20px;
-	vertical-align: middle;
-	margin: 0;
-	margin-left: 30px;
-	padding: 0;
-	line-height: 100%;
-	float: left;
+.mx li {
+	list-style: none;
+	margin-left: -30px;
 }
 
-.mx table{
-	/*border: 1px solid black;*/
-	width: 400px;
-	margin-left: 20px;
-	float: left;
-}
-
-.mx td{
-	font-size: 20px;
-	text-align: left;
-	margin: 0;
-	padding: 0;
+table {
+	border-collapse: collapse;
 }
 
 .matrix {
-	color: white;
-	font-size: 20px;
 	padding: 0px;
 	margin: 0px;
+	margin-top: 10px;
 }
 
 .matrix tr {
@@ -59,84 +34,20 @@ input {
 	margin: 0px;
 }
 
+.matrix td:last-child {
+	border-right: 1px solid #0c0c0c; 
+}
+
+.matrix tr:last-child td {
+	border-bottom: 1px solid #0c0c0c; 
+}
+
 .matrix td {
-	border: 1px solid #0c0c0c;
+	border-left: 1px solid #0c0c0c;
+	border-top: 1px solid #0c0c0c; 
 	padding: 0px;
 	margin: 0px;
-	height: 40px;
-	width: 40px;
-}
-
-.images img {
-	border: 1px solid blue;
-	width: 30%;
-	float: left;
-	margin-right: 20px;
-}
-
-h1 {
-	color: gold;
-}
-
-.menu {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	width: 100%;
-	display: inline;
-	text-align: justify;
-	background: blue;
-}
-
-.menu li {
-	display: inline-block;
-	margin-right: 5px;
-	width: 100px;
-	margin-left: 100px;
-	margin-right: 100px;
-	text-align: justify;
-	padding: 10px;
-}
-
-.menu a {
-	color: black;
-	/*display: block;
-	padding: 8px 14px;
-	border: 1px solid #e5e5e5;
-	margin-bottom: -1px;*/
-	text-decoration: none;
-}
-
-.menu .active a {
-	color: white;
-	background: #08c;
-}
-
-.menu a:hover {
-	background: #f5f5f5;
-}
-
-pre {
-	color: blue;
-	font-size: 18px;
-}
-
-#vk_subscribe {
-	position: absolute;
-	top: 500px;
-	left: 500px;
-}
-
-.contacts {
-	vertical-align: middle;
-	margin-top: 250px;
-}
-
-.contacts a {
+	height: 30px;
+	padding: 0 5px;
 	text-align: center;
-	display: block;
-	text-decoration: none;
-}
-*{
-	color: #0c0c0c;
 }
