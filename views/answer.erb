@@ -19,13 +19,13 @@
 		<tr>
 			<td> ξ </td>
 			<% @n.times do |i| %>
-				<td><%= @xi.vals[i + 1] %>
+				<td><%= @xi.vals[i + 1].round(7) %>
 			<% end %>
 		</tr>
 		<tr>
 			<td> p<sub>i</sub> </td>
 			<% @n.times do |i| %>
-				<td><%= @xi.probs[i + 1] %>
+				<td><%= @xi.probs[i + 1].round(7) %>
 			<% end %>
 		</tr>
 	</table>
@@ -33,13 +33,13 @@
 		<tr>
 			<td> η </td>
 			<% @m.times do |i| %>
-				<td><%= @eta.vals[i + 1] %>
+				<td><%= @eta.vals[i + 1].round(7) %>
 			<% end %>
 		</tr>
 		<tr>
 			<td> p<sub>i</sub> </td>
 			<% @m.times do |i| %>
-				<td><%= @eta.probs[i + 1] %>
+				<td><%= @eta.probs[i + 1].round(7) %>
 			<% end %>
 		</tr>
 	</table>
