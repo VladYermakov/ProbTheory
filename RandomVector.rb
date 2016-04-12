@@ -125,21 +125,26 @@ def process(distribution, xi, q)
 
 	n = distribution.size - 1
 
-	printf "\n"
+	a = []
+
+	a[0] =  ""
 
 	for i in 0..n
-		printf "%.4f, при ", distribution[i]
+		a[i + 1] = "%.4f, при " % distribution[i]
 		if i == 0
-			printf "%s <= %.4f", q, xi[i + 1]
+			a[i + 1] += "%s <= %.4f" % [q, xi[i + 1]]
 		elsif i == n
-			printf "%s > %.4f", q, xi[i]
+			a[i + 1] += "%s > %.4f" % [q, xi[i]]
 		else
-			printf "%.4f < %s <= %.4f", xi[i], q, xi[i + 1]
+			a[i + 1] += "%.4f < %s <= %.4f" % [xi[i], q, xi[i + 1]]
 		end
-		printf "\n"
+		#a[i + 1] += "\n"
 	end
 
+	a
+
 end
+
 =begin
 rv = RandomVector.new
 

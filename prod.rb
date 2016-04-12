@@ -30,6 +30,9 @@ post "/" do
 	@xi = @vec.xi
 	@eta = @vec.eta
 
+	@f_xi = process(@xi.distribution, @xi.vals, "x")
+	@f_eta = process(@eta.distribution, @eta.vals, "y")
+
 	erb :answer
 
 end
@@ -58,7 +61,6 @@ __END__
 </form>
 
 @@ answer
-
 <table class="matrix">
 	<tr>
 		<td>ξ\η</td>
@@ -75,18 +77,56 @@ __END__
 		</tr>
 	<% end %>
 </table>
+<table class=mx>
+	<% (@n+1).times do |i| %>
+		<tr>
+			<td><%= @f_xi[i + 1] %></td>
+		</tr>
+	<% end %>
+</table>
+<table class=mx>
+	<% (@m+1).times do |i| %>
+		<tr>
+			<td><%= @f_eta[i + 1] %></td>
+		</tr>
+	<% end %>
+</table>
 <table class="matrix">
 	<tr>
 		<td>Mξ</td>
 		<td>Mη</td>
 		<td>Dξ</td>
 		<td>Dη</td>
+		<td>σξ</td>
+		<td>ση</td>
+		<td>Moξ</td>
+		<td>Moη</td>
+		<td>Meξ</td>
+		<td>Meη</td>
+		<td>Asξ</td>
+		<td>Asη</td>
+		<td>Ekξ</td>
+		<td>Ekη</td>
+		<td>covξη</td>
+		<td>rξη</td>
 	</tr>
 	<tr>
-		<td><%= expected_value(@xi).round(4).to_s %></td>
-		<td><%= expected_value(@eta).round(4).to_s %></td>
-		<td><%= variance(@xi).round(4).round(4).to_s %></td>
-		<td><%= variance(@eta).round(4).round(4).to_s %></td>
+		<td><%= expected_value(@xi).round(7).to_s %></td>
+		<td><%= expected_value(@eta).round(7).to_s %></td>
+		<td><%= variance(@xi).round(7).round(7).to_s %></td>
+		<td><%= variance(@eta).round(7).round(7).to_s %></td>
+		<td><%= standard_deviation(@xi).round(7).to_s %></td>
+		<td><%= standard_deviation(@eta).round(7).to_s %></td>
+		<td><%= mode(@xi).round(7).to_s %></td>
+		<td><%= mode(@eta).round(7).to_s %></td>
+		<td><%= median(@xi).round(7).to_s %></td>
+		<td><%= median(@eta).round(7).to_s %></td>
+		<td><%= skewness(@xi).round(7).to_s %></td>
+		<td><%= skewness(@eta).round(7).to_s %></td>
+		<td><%= kurtosis(@xi).round(7).to_s %></td>
+		<td><%= kurtosis(@eta).round(7).to_s %></td>
+		<td><%= cov(@vec).round(7).to_s %></td>
+		<td><%= dependence(@vec).round(7).to_s %></td>
 	</tr>
 </table>
 <form method=GET><input type="submit" value=Back></form>

@@ -1,5 +1,6 @@
 body {
-	background: url('background.jpg');
+	/*background: url('background.jpg');*/
+	background: #fcfcfc;
 	min-height: 600px;
 	padding: 0;
 	text-align: center;
@@ -16,12 +17,17 @@ input {
 
 p {
 	font-size: 20px;
-	color: white;
+	color: black;
 }
 
 .equality {
 	font-size: 20px;
 	color: white;
+}
+
+.mx td{
+	font-size: 20px;
+	text-align: left;
 }
 
 .matrix {
@@ -37,7 +43,7 @@ p {
 }
 
 .matrix td {
-	border: 1px solid white;
+	border: 1px solid #0c0c0c;
 	padding: 0px;
 	margin: 0px;
 	height: 40px;
@@ -113,4 +119,7 @@ pre {
 	text-align: center;
 	display: block;
 	text-decoration: none;
+}
+*{
+	color: #0c0c0c;
 }
