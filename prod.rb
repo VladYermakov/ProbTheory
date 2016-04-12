@@ -1,28 +1,31 @@
 require "rubygems"
 require "sinatra"
 
-get '/' do
+class Prod
 
-	erb :index
-	
-end
+	get '/' do
 
-post "/" do
+		erb :index
 
-	arr = params[:matrix].split("\n")
-
-	@n = arr[0].to_i
-
-	@m = []
-
-	@n.times do |i|
-		@m[i] = arr[i + 1].split
 	end
 
-	erb :answer
+	post "/" do
+
+		arr = params[:matrix].split("\n")
+
+		@n = arr[0].to_i
+
+		@m = []
+
+		@n.times do |i|
+			@m[i] = arr[i + 1].split
+		end
+
+		erb :answer
+
+	end
 
 end
-
 __END__
 
 @@ layout
