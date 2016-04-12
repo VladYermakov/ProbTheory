@@ -15,6 +15,34 @@
 			</tr>
 		<% end %>
 	</table>
+	<table>
+		<tr>
+			<td> ξ </td>
+			<% @n.times do |i| %>
+				<td><%= @xi.vals[i + 1] %>
+			<% end %>
+		</tr>
+		<tr>
+			<td> p<sub>i</sub> </td>
+			<% @n.times do |i| %>
+				<td><%= @xi.probs[i + 1] %>
+			<% end %>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td> η </td>
+			<% @m.times do |i| %>
+				<td><%= @eta.vals[i + 1] %>
+			<% end %>
+		</tr>
+		<tr>
+			<td> p<sub>i</sub> </td>
+			<% @m.times do |i| %>
+				<td><%= @eta.probs[i + 1] %>
+			<% end %>
+		</tr>
+	</table>
 </div>
 <table class="mx">
 	<tr>
@@ -45,7 +73,7 @@
 		</td>
 	</tr>
 </table>
-<div class=matrix>
+<div class="matrix">
 	<table>
 		<tr>
 			<td>Mξ</td>
@@ -85,4 +113,4 @@
 		</tr>
 	</table>
 </div>
-<form method=GET><input type="submit" value=Back></form>
+<form method="GET"><input type="submit" value="Назад"></form>

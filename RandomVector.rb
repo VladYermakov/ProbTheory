@@ -65,17 +65,7 @@ class RandomVector
 
 		@n = _matrix.size
 		@m = _matrix[0].size
-=begin
-		@matrix = []
-		
-		q = [0] * (@m + 1)
 
-		@n.times do |i|
-			_matrix[i].unshift 0
-		end
-
-		_matrix.unshift q
-=end
 		@matrix = _matrix
 
 		process_xi(x_xi)
