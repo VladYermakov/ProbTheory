@@ -130,82 +130,49 @@ def process(distribution, xi, q)
 	a[0] =  ""
 
 	for i in 0..n
-		a[i + 1] = "%.4f, при " % distribution[i]
-		if i == 0
-			a[i + 1] += "%s <= %.4f" % [q, xi[i + 1]]
-		elsif i == n
-			a[i + 1] += "%s > %.4f" % [q, xi[i]]
-		else
-			a[i + 1] += "%.4f < %s <= %.4f" % [xi[i], q, xi[i + 1]]
+		s = "%.4f" % distribution[i]
+		while s[-1] == "0"
+			s = s[0..-2]
 		end
-		#a[i + 1] += "\n"
+		if s[-1] == "."
+			s = s[0..-2]
+		end
+		s += ", при "
+		if i == 0
+			s += "%s <= %.4f" % [q, xi[i + 1]]
+			while s[-1] == "0"
+				s = s[0..-2]
+			end
+			if s[-1] == "."
+			s = s[0..-2]
+		end
+		elsif i == n
+			s += "%s > %.4f" % [q, xi[i]]
+			while s[-1] == "0"
+				s = s[0..-2]
+			end
+			if s[-1] == "."
+			    s = s[0..-2]
+			end
+		else
+			s += "%.4f" % xi[i]
+			while s[-1] == "0"
+				s = s[0..-2]
+			end
+			if s[-1] == "."
+				s = s[0..-2]
+			end
+			s += " < %s <= %.4f" % [q, xi[i + 1]]
+			while s[-1] == "0"
+				s = s[0..-2]
+			end
+			if s[-1] == "."
+				s = s[0..-2]
+			end
+		end
+		a[i + 1] = s
 	end
 
 	a
 
 end
-
-=begin
-rv = RandomVector.new
-
-printf "Введіть n і m: "
-n, m = gets.split.map(&:to_i)
-
-printf "Введіть ξ: "
-xi = gets.split.map(&:to_f)
-printf "Введіть η: "
-eta = gets.split.map(&:to_f)
-
-puts "Введіть матрицю випадкового вектора: "
-a = []
-
-n.times do |i|
-	a[i] = gets.split.map(&:to_f)
-end
-
-rv.set_vector a, xi, eta
-
-xi = rv.xi
-eta = rv.eta
-
-process(xi.distribution, xi.vals, "x")
-
-process(eta.distribution, eta.vals, "y")
-
-puts
-
-puts "Mξ = " + expected_value(xi).round(4).to_s
-puts "Mη = " + expected_value(eta).round(4).to_s
-
-puts "Dξ = " + variance(xi).round(4).round(4).to_s
-puts "Dη = " + variance(eta).round(4).round(4).to_s
-
-puts "σξ = " + standard_deviation(xi).round(4).to_s
-puts "ση = " + standard_deviation(eta).round(4).to_s
-
-puts "Moξ = " + mode(xi).round(4).to_s
-puts "Moη = " + mode(eta).round(4).to_s
-
-puts "Meξ = " + median(xi).round(4).to_s
-puts "Meη = " + median(eta).round(4).to_s
-
-puts "Asξ = " + skewness(xi).round(4).to_s
-puts "Asη = " + skewness(eta).round(4).to_s
-
-puts "Ekξ = " + kurtosis(xi).round(4).to_s
-puts "Ekη = " + kurtosis(eta).round(4).to_s
-
-puts "rξη = " + dependence(rv).round(4).to_s
-
-gets
-=end
-#37ead887-5d59-4665-86ee-946a590f9d3a
-
-=begin
-3 2
-3 10 12
-4 5
-0.17 0.10
-0.13 0.30
-0.25 0.05
-=end

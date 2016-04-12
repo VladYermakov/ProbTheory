@@ -23,6 +23,10 @@ table {
 	border-collapse: collapse;
 }
 
+.input td{
+	padding-left: 2px;
+}
+
 .matrix {
 	padding: 0px;
 	margin: 0px;
