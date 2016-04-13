@@ -75,3 +75,28 @@ footer {
 	position: relative;
 	bottom: -20px;
 }
+
+.locale {
+	text-align: left;
+	margin-left: 250px;
+}
+
+.locale a {
+	/*text-decoration: none;*/
+}
+
+.main {
+	float: left;
+}
+
+#sidebar {
+	width: 200px;
+	height: 10px;
+}
+
+.clearfix:after {
+	clear: both;
+	content: "";
+	display: block;
+	height: 0;
+}

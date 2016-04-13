@@ -1,16 +1,34 @@
 require "rubygems"
 require "sinatra"
+require "sinatra/cookies"
 require "./RandomVector"
+require "./local.rb"
+
+include Localization
 
 get '/' do
+	redirect to("/uk")
+end
+
+get '/:lang' do |l|
+
+	@lang = l.to_sym
+	@lang = session[:lang] if session.has_key? :lang
+
+	@local = Local[@lang]
 
 	erb :index
 	
 end
 
-post "/" do
+post "/:lang/calc" do |l|
 
-	return redirect to("/"), 301 if params[:re] == "1"
+	return redirect to("/#{l}"), 301 if params[:re] == "1"
+
+	@lang = l.to_sym
+	@lang = session[:lang] if session.has_key? :lang
+
+	@local = Local[@lang]
 
 	arr = params[:matrix].split("\n")
 

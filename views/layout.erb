@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Теорія Імовірностей</title>
+		<title><%= @local[:title] %></title>
 		<link rel="stylesheet" href="/assets/style.css">
 		<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 	</head>
 	<body>
-		<%= yield %>
+		<header>
+			<p class="locale">
+				<% if @lang != :uk %> 
+					<a href = "/uk">uk</a>
+				<% else %>
+					<b>uk</b>
+				<% end %>
+				|
+				<% if @lang != :ru %> 
+					<a href = "/ru">ru</a>
+				<% else %>
+					<b>ru</b>
+				<% end %>
+				|
+				<% if @lang != :en %> 
+					<a href = "/en">en</a>
+				<% else %>
+					<b>en</b>
+				<% end %>
+			</p>
+		</header>
+		<div class="clearfix">
+			<!--div class="main" id="sidebar">
+			</div-->
+			<div class="main">
+				<%= yield %>
+			</div>
+		</div>
 		<!--audio controls="controls" autoplay loop>
 			<source src="/music/testsong.mp3">
 		</audio-->

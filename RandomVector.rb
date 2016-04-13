@@ -127,7 +127,7 @@ def process(distribution, xi, q)
 		if s[-1] == "."
 			s = s[0..-2]
 		end
-		s += ", при "
+		s += ", "+@local[:if]+" "
 		if i == 0
 			s += "%s &le; %.4f" % [q, xi[i + 1].round(7)]
 			while s[-1] == "0"
