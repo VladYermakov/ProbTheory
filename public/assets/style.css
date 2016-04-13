@@ -9,10 +9,11 @@ body {
 
 textarea {
 	resize: none;
+	text-align: center;
 }
 
 #matrix{
-	resize: vertical;
+	resize: all;
 }
 
 .mx{

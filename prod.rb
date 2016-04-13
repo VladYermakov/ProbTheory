@@ -10,6 +10,8 @@ end
 
 post "/" do
 
+	return redirect to("/"), 301 if params[:re] == "1"
+
 	arr = params[:matrix].split("\n")
 
 	@n = params[:n].to_i

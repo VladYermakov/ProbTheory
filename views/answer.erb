@@ -19,13 +19,13 @@
 		<tr>
 			<td> ξ </td>
 			<% @n.times do |i| %>
-				<td><%= @xi.vals[i + 1].round(7) %>
+				<td><%= @xi.vals[i + 1].round(7) %></td>
 			<% end %>
 		</tr>
 		<tr>
 			<td> p<sub>i</sub> </td>
 			<% @n.times do |i| %>
-				<td><%= @xi.probs[i + 1].round(7) %>
+				<td><%= @xi.probs[i + 1].round(7) %></td>
 			<% end %>
 		</tr>
 	</table>
@@ -33,13 +33,13 @@
 		<tr>
 			<td> η </td>
 			<% @m.times do |i| %>
-				<td><%= @eta.vals[i + 1].round(7) %>
+				<td><%= @eta.vals[i + 1].round(7) %></td>
 			<% end %>
 		</tr>
 		<tr>
 			<td> p<sub>i</sub> </td>
 			<% @m.times do |i| %>
-				<td><%= @eta.probs[i + 1].round(7) %>
+				<td><%= @eta.probs[i + 1].round(7) %></td>
 			<% end %>
 		</tr>
 	</table>
@@ -113,4 +113,7 @@
 		</tr>
 	</table>
 </div>
-<form method="GET"><input type="submit" value="Назад"></form>
+<form method="POST" action="">
+	<input type="hidden" name="re" value="1"></input>
+	<input type="submit" value="Назад">
+</form>
