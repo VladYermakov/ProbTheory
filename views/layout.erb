@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 	<head>
@@ -89,4 +90,49 @@
 			Copyright &copy; 2016 Vlad Yermakov
 		</footer>
 	</body>
+=======
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= @local[:title] %></title>
+		<link rel="stylesheet" href="/assets/style.css">
+		<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+	</head>
+	<body>
+		<header>
+			<p class="locale">
+				<% if @lang != :uk %> 
+					<a href = "/uk">uk</a>
+				<% else %>
+					<b>uk</b>
+				<% end %>
+				|
+				<% if @lang != :ru %> 
+					<a href = "/ru">ru</a>
+				<% else %>
+					<b>ru</b>
+				<% end %>
+				|
+				<% if @lang != :en %> 
+					<a href = "/en">en</a>
+				<% else %>
+					<b>en</b>
+				<% end %>
+			</p>
+		</header>
+		<div class="clearfix">
+			<!--div class="main" id="sidebar">
+			</div-->
+			<div class="main">
+				<%= yield %>
+			</div>
+		</div>
+		<!--audio controls="controls" autoplay loop>
+			<source src="/music/testsong.mp3">
+		</audio-->
+		<footer>
+			Copyright &copy; 2016 Vlad Yermakov
+		</footer>
+	</body>
+>>>>>>> 488e3aa9ad138f47f269c82cdb59bd2537d3b48e
 </html>
