@@ -1,0 +1,24 @@
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+   	var data_xi = google.visualization.arrayToDataTable(<%= process_xi_for_graph %>);
+    var data_eta = google.visualization.arrayToDataTable(<%= process_eta_for_graph %>);
+
+    var options_xi = {
+      	title: 'Fξ graph',
+      	vAxis: {ticks: [-0.5, 0, 0.5, 1, 1.5]}
+      			
+	};
+
+	var options_eta = {
+      	title: 'Fη graph',
+      	vAxis: {ticks: [-0.5, 0, 0.5, 1, 1.5]},
+      	colors: ['red']
+	};
+
+    var chart_xi = new google.visualization.SteppedAreaChart(document.getElementById('graph-xi'));
+    var chart_eta = new google.visualization.SteppedAreaChart(document.getElementById('graph-eta'));
+
+	chart_xi.draw(data_xi, options_xi);
+	chart_eta.draw(data_eta, options_eta);
+}

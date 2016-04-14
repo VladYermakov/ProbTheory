@@ -177,6 +177,7 @@ def process_xi_for_graph
 		ans[i + 3] = [@xi.vals[i + 2], f_xi[i + 1]]
 	end
 	ans += [[@xi.vals[-1] + 1, 1]]
+	@q_xi = ans[1][0]
 	ans
 end
 
@@ -190,5 +191,20 @@ def process_eta_for_graph
 		ans[i + 3] = [@eta.vals[i + 2], f_eta[i + 1]]
 	end
 	ans += [[@eta.vals[-1] + 1, 1]]
+	@q_eta = ans[1][0]
 	ans
 end
+
+=begin
+ans = []
+	ans[0] = ['X', 'Fη']
+	f_eta = @eta.distribution
+	ans[1] = [(@eta.vals[1] - 1).to_s, 0]
+	ans[2] = [@eta.vals[1].to_s, 0]
+	(@m-1).times do |i|
+		ans[i + 3] = [@eta.vals[i + 2].to_s, f_eta[i + 1]]
+	end
+	ans += [[(@eta.vals[-1] + 1).to_s, 1]]
+	@q_eta = ans[1][0]
+	ans
+=end
