@@ -1,0 +1,112 @@
+body {
+	background: #fcfcfc;
+	font-size: 20px;
+	padding: 0;
+	margin: 0;
+	margin-left: 10px;
+	color: #0c0c0c;
+}
+
+textarea {
+	resize: none;
+	text-align: center;
+}
+
+#matrix{
+	resize: all;
+}
+
+.mx{
+	padding: 0;
+	margin-bottom: -10px;
+	
+}
+
+.mx li {
+	list-style: none;
+	margin-left: -30px;
+}
+
+table {
+	border-collapse: collapse;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 30px;
+}
+
+.input td{
+	padding-left: 2px;
+}
+
+.matrix {
+	padding: 0px;
+	margin: 0px;
+	margin-top: 10px;
+}
+
+.matrix tr {
+	padding: 0px;
+	margin: 0px;
+}
+
+.matrix td:last-child {
+	border-right: 1px solid #0c0c0c; 
+}
+
+.matrix tr:last-child td {
+	border-bottom: 1px solid #0c0c0c; 
+}
+
+.matrix td {
+	border-left: 1px solid #0c0c0c;
+	border-top: 1px solid #0c0c0c; 
+	padding: 0px;
+	margin: 0px;
+	height: 30px;
+	padding: 0 5px;
+	text-align: center;
+}
+
+form {
+	margin-top: 10px;
+}
+
+footer {
+	position: relative;
+	bottom: -20px;
+}
+
+.locale {
+	text-align: left;
+	margin-left: 250px;
+}
+
+.locale a {
+	/*text-decoration: none;*/
+}
+
+.main {
+	float: left;
+}
+
+#sidebar {
+	width: 200px;
+	height: 10px;
+}
+
+.clearfix:after {
+	clear: both;
+	content: "";
+	display: block;
+	height: 0;
+}
+
+#graph-xi,
+#graph-eta {
+	width: 450px; 
+	height: 250px;
+}
+
+.graph {
+	float: left;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= @local[:title] %></title>
+		<link rel="stylesheet" href="/assets/style.css">
+		<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+		<!--script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript">
+			google.load('current', {'packages': ['corechart']});
+			google.setOnLoadCallback(drawChart);
+			function drawChart() {
+				var data = google.visualization.arrayToDataTable([
+					['X', 'Y'],
+					[3, 0.27],
+					[10, 0.43],
+					[12, 0.3]
+					]);
+				var options = {
+					title: 'ξ graph';
+					isStacked: true;
+				};
+
+				var chart = new google.visualization.SteppedAreaChart(document.getElementById('graph'));
+				chart.draw(data, options);
+			}
+
+		</script-->
+	    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<% unless @vec.nil? %> <script type="text/javascript">
+      		google.charts.load('current', {'packages':['corechart']});
+      		google.charts.setOnLoadCallback(drawChart);
+      		function drawChart() {
+        		var data_xi = google.visualization.arrayToDataTable(<%= process_xi_for_graph %>);
+        		var data_eta = google.visualization.arrayToDataTable(<%= process_eta_for_graph %>);
+
+        		var options_xi = {
+          			title: 'Fξ graph',
+          			vAxis: {ticks: [-0.5, 0, 0.5, 1, 1.5]}
+          			
+		        };
+
+		        var options_eta = {
+          			title: 'Fη graph',
+          			vAxis: {ticks: [-0.5, 0, 0.5, 1, 1.5]}
+		        };
+
+        		var chart_xi = new google.visualization.SteppedAreaChart(document.getElementById('graph-xi'));
+        		var chart_eta = new google.visualization.SteppedAreaChart(document.getElementById('graph-eta'));
+
+		        chart_xi.draw(data_xi, options_xi);
+		        chart_eta.draw(data_eta, options_eta);
+      		}
+		</script>
+		<% end %>
+	</head>
+	<body>
+		<header>
+			<p class="locale">
+				<% if @lang != :uk %> 
+					<a href = "/uk">uk</a>
+				<% else %>
+					<b>uk</b>
+				<% end %>
+				|
+				<% if @lang != :ru %> 
+					<a href = "/ru">ru</a>
+				<% else %>
+					<b>ru</b>
+				<% end %>
+				|
+				<% if @lang != :en %> 
+					<a href = "/en">en</a>
+				<% else %>
+					<b>en</b>
+				<% end %>
+			</p>
+		</header>
+		<div class="clearfix">
+			<!--div class="main" id="sidebar">
+			</div-->
+			<div class="main">
+				<%= yield %>
+			</div>
+		</div>
+		<!--audio controls="controls" autoplay loop>
+			<source src="/music/testsong.mp3">
+		</audio-->
+		<footer>
+			Copyright &copy; 2016 Vlad Yermakov
+		</footer>
+	</body>
+</html>
