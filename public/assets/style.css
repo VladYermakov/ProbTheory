@@ -71,11 +71,6 @@ form {
 	margin-top: 10px;
 }
 
-footer {
-	position: relative;
-	bottom: -20px;
-}
-
 .locale {
 	text-align: right;
 	/*margin-left: 250px;*/
@@ -99,7 +94,13 @@ footer {
 	clear: both;
 	content: "";
 	display: block;
-	height: 0;
+}
+
+.fclearfix:after {
+	clear: both;
+	content: "";
+	display: block;
+	height: 200px;
 }
 
 #graph-xi,
@@ -110,4 +111,39 @@ footer {
 
 .graph {
 	float: left;
+}
+
+footer {
+	border-top: 1px solid black;
+	position: relative;
+	bottom: -20px;
+	margin-top: 20px;
+	/*width: 100%;
+	width: 500px;
+	left: 27%;*/
+}
+
+footer p {
+	margin-top: 5px;
+	float: left;
+}
+
+footer .locale {
+	float: right;
+}
+
+td:first-child {
+	padding-right: 20px;
+}
+
+.button {
+	position: relative;
+	left: 150px;
+	top: 10px;
+}
+
+.form {
+	position: absolute;
+	margin-right: 35%;
+	margin-left: 35%;
 }

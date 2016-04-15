@@ -1,6 +1,7 @@
 require "rubygems"
 require "sinatra"
 require "sinatra/cookies"
+require "sinatra/flash"
 require "./RandomVector"
 require "./local.rb"
 
@@ -37,6 +38,11 @@ post "/:lang/calc" do |l|
 
 	@x_xi = params[:xi].split.map(&:to_f)
 	@x_eta = params[:eta].split.map(&:to_f)
+
+	unless sorted?(@x_xi) && sorted?(@x_eta)
+		flash[:error] = "лол"
+		return redirect to("/#{l}")
+	end
 
 	@p = []
 

@@ -1,5 +1,5 @@
 <form method="POST" action=<%= "/#{@lang}/calc" %>>
-	<table class="input">
+	<div class="fclearfix"><div class="form"><table class="input">
 		<tr> 
 			<td><%= @local[:nm] %></td> 
 			<td><textarea name="n" cols="8" rows="1" required placeholder="n"></textarea></td><td><textarea name="m" cols="8" rows="1" required  placeholder="m"></textarea></td>
@@ -19,5 +19,6 @@
 	</table>
 	<br>
 	<input type="hidden" name="re" value="2">
-	<button type="submit"><%= @local[:calc] %></button>
+	<button type="submit" class="button"><%= @local[:calc] %></button>
+	</div></div>
 </form>

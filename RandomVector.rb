@@ -172,12 +172,11 @@ def process_xi_for_graph
 	ans[0] = ['X', 'Fξ']
 	f_xi = @xi.distribution
 	ans[1] = [@xi.vals[1] - 1, 0]
-	ans[2] = [@xi.vals[1], 0]
-	(@n-1).times do |i|
-		ans[i + 3] = [@xi.vals[i + 2], f_xi[i + 1]]
+	@n.times do |i|
+		ans += [[@xi.vals[i + 1], f_xi[i]]]
+		ans += [[@xi.vals[i + 1], f_xi[i + 1]]]
 	end
 	ans += [[@xi.vals[-1] + 1, 1]]
-	@q_xi = ans[1][0]
 	ans
 end
 
@@ -186,25 +185,31 @@ def process_eta_for_graph
 	ans[0] = ['X', 'Fη']
 	f_eta = @eta.distribution
 	ans[1] = [@eta.vals[1] - 1, 0]
-	ans[2] = [@eta.vals[1], 0]
-	(@m-1).times do |i|
-		ans[i + 3] = [@eta.vals[i + 2], f_eta[i + 1]]
+	@m.times do |i|
+		ans += [[@eta.vals[i + 1], f_eta[i]]]
+		ans += [[@eta.vals[i + 1], f_eta[i + 1]]]
 	end
 	ans += [[@eta.vals[-1] + 1, 1]]
-	@q_eta = ans[1][0]
 	ans
 end
 
-=begin
-ans = []
-	ans[0] = ['X', 'Fη']
-	f_eta = @eta.distribution
-	ans[1] = [(@eta.vals[1] - 1).to_s, 0]
-	ans[2] = [@eta.vals[1].to_s, 0]
-	(@m-1).times do |i|
-		ans[i + 3] = [@eta.vals[i + 2].to_s, f_eta[i + 1]]
+def get_xi_ticks
+	x1 = @xi.vals[1].to_i - 1
+	x2 = @xi.vals[-1].to_i + 1
+	(x1..x2).to_a
+
+end
+
+def get_eta_ticks
+	y1 = @eta.vals[1].to_i - 1
+	y2 = @eta.vals[-1].to_i + 1
+	(y1..y2).to_a
+end
+
+def sorted?(x)
+	n = x.size
+	(n-1).times do |i|
+		return false if x[i] > x[i + 1]
 	end
-	ans += [[(@eta.vals[-1] + 1).to_s, 1]]
-	@q_eta = ans[1][0]
-	ans
-=end
+	true
+end
